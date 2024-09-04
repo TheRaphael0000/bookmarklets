@@ -1,6 +1,8 @@
 javascript: (() => {
     let fc = document.body.firstChild;
-    let items = new Array(...document.querySelectorAll(".fa-magnet")).map(e => e.parentElement);
+    let items = new Array(...document.querySelectorAll(".fa-magnet")).map(
+        (e) => e.parentElement
+    );
     let els = [];
 
     for (let i = 0; i < items.length; i++) {
@@ -16,14 +18,13 @@ javascript: (() => {
         let item = items[i];
         let nextItem = items[i + 1];
         let el = els[i];
-        if (item == null)
-            continue;
+        if (item == null) continue;
         el.addEventListener("click", (e) => {
-            e.target.style.display = 'none';
+            e.target.style.display = "none";
             item.style = "background-color: yellow";
             nextItem.style = "background-color: orange";
             els[i + 1].style = "font-size: 3em";
-        })
+        });
     }
 
     items[0].style = "background-color: orange";
